@@ -21,13 +21,9 @@ public class NoVisibility {
     }
 
     public static void main(String[] args) {
-        new ReaderThread().start();
+        ready = false;//如何ready使false，Thread会yield进行让步
+    	new ReaderThread().start();
         number = 42;
-        try {
-            Thread.sleep(1000);                 //1000 毫秒，也就是1秒.
-        } catch(InterruptedException ex) {
-            Thread.currentThread().interrupt();
-        }
         ready = true;
     }
 }
