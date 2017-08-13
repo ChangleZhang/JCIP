@@ -1,4 +1,4 @@
-package net.jcip.examples;
+package jcip.examples;
 
 /**
  * NoVisibility
@@ -23,6 +23,11 @@ public class NoVisibility {
     public static void main(String[] args) {
         new ReaderThread().start();
         number = 42;
+        try {
+            Thread.sleep(1000);                 //1000 ∫¡√Î£¨“≤æÕ «1√Î.
+        } catch(InterruptedException ex) {
+            Thread.currentThread().interrupt();
+        }
         ready = true;
     }
 }
