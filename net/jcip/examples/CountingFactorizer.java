@@ -1,4 +1,4 @@
-package net.jcip.examples;
+package jcip.examples;
 
 import java.math.BigInteger;
 import java.util.concurrent.atomic.*;
@@ -16,7 +16,7 @@ import net.jcip.annotations.*;
 @ThreadSafe
 public class CountingFactorizer extends GenericServlet implements Servlet {
     private final AtomicLong count = new AtomicLong(0);
-
+    //count是final类型的，所以CountingFactorizer类的线程安全性被委托给了AtomicLong来保证
     public long getCount() { return count.get(); }
 
     public void service(ServletRequest req, ServletResponse resp) {
