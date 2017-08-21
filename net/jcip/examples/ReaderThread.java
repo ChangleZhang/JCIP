@@ -1,4 +1,4 @@
-package net.jcip.examples;
+package jcip.examples;
 
 import java.io.IOException;
 import java.io.InputStream;
